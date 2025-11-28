@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Aroma - Home</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="script.js" defer></script>
+  <style>
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .hero-text {
+      flex: 1 1 300px;
+    }
+    .hero-img {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .cta-btn {
+      background: #8d5524;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover {
+      background: #5c3310;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Café Aroma</h1>
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="menu-toggle" aria-label="Toggle navigation" style="display:none;">☰</button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Welcome to Café Aroma</h2>
+        <p>Your neighborhood café for fresh coffee, delicious pastries, and a cozy atmosphere. Enjoy locally roasted beans, homemade treats, and friendly service every day.</p>
+        <button class="cta-btn" onclick="window.location.href='contact.html'">Order Online</button>
+      </div>
+      <div class="hero-img">
+        <img src="assets/images/coffee.jpg" alt="Café Interior" class="placeholder" style="max-width:350px;box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+      </div>
+    </section>
+    <section>
+      <h3>Why Visit Us?</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>✔ Freshly brewed coffee</li>
+        <li>✔ Homemade pastries</li>
+        <li>✔ Free Wi-Fi & cozy seating</li>
+        <li>✔ Friendly local staff</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Café Aroma. All rights reserved. | Designed by Okullo Designs
+  </footer>
+  <script>
+    // Show mobile menu toggle on small screens
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const mainNav = document.getElementById('main-nav');
+      if (window.innerWidth < 700) {
+        menuToggle.style.display = 'block';
+        mainNav.style.display = 'none';
+        menuToggle.addEventListener('click', function() {
+          mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+        });
+      }
+      window.addEventListener('resize', function() {
+        if (window.innerWidth < 700) {
+          menuToggle.style.display = 'block';
+          mainNav.style.display = 'none';
+        } else {
+          menuToggle.style.display = 'none';
+          mainNav.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

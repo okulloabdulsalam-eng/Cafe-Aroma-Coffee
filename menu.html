@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Café Aroma</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="script.js" defer></script>
+  <style>
+    .menu-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 2rem;
+    }
+    .menu-category {
+      margin-bottom: 2rem;
+    }
+    .menu-category h2 {
+      color: #8d5524;
+      margin-bottom: 1rem;
+    }
+    .menu-list {
+      list-style: none;
+      padding: 0;
+    }
+    .menu-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .menu-item-name {
+      font-weight: 500;
+    }
+    .menu-item-price {
+      color: #8d5524;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Café Aroma</h1>
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="menu-toggle" aria-label="Toggle navigation" style="display:none;">☰</button>
+  </header>
+  <main>
+    <section class="menu-section">
+      <div class="menu-category">
+        <h2>Coffee & Espresso</h2>
+        <ul class="menu-list">
+          <li><span class="menu-item-name">Espresso</span><span class="menu-item-price">$2.50</span></li>
+          <li><span class="menu-item-name">Americano</span><span class="menu-item-price">$2.75</span></li>
+          <li><span class="menu-item-name">Cappuccino</span><span class="menu-item-price">$3.25</span></li>
+          <li><span class="menu-item-name">Latte</span><span class="menu-item-price">$3.50</span></li>
+          <li><span class="menu-item-name">Mocha</span><span class="menu-item-price">$3.75</span></li>
+        </ul>
+      </div>
+      <div class="menu-category">
+        <h2>Pastries & Treats</h2>
+        <ul class="menu-list">
+          <li><span class="menu-item-name">Croissant</span><span class="menu-item-price">$2.00</span></li>
+          <li><span class="menu-item-name">Blueberry Muffin</span><span class="menu-item-price">$2.25</span></li>
+          <li><span class="menu-item-name">Chocolate Chip Cookie</span><span class="menu-item-price">$1.75</span></li>
+          <li><span class="menu-item-name">Banana Bread</span><span class="menu-item-price">$2.50</span></li>
+        </ul>
+      </div>
+      <div class="menu-category">
+        <h2>Teas</h2>
+        <ul class="menu-list">
+          <li><span class="menu-item-name">Black Tea</span><span class="menu-item-price">$2.00</span></li>
+          <li><span class="menu-item-name">Green Tea</span><span class="menu-item-price">$2.00</span></li>
+          <li><span class="menu-item-name">Chamomile Tea</span><span class="menu-item-price">$2.25</span></li>
+          <li><span class="menu-item-name">Herbal Tea</span><span class="menu-item-price">$2.25</span></li>
+          <li><span class="menu-item-name">Iced Tea</span><span class="menu-item-price">$2.50</span></li>
+        </ul>
+      </div>
+      <div class="menu-category">
+        <h2>Snacks</h2>
+        <ul class="menu-list">
+          <li><span class="menu-item-name">Cheese Sandwich</span><span class="menu-item-price">$3.50</span></li>
+          <li><span class="menu-item-name">Veggie Wrap</span><span class="menu-item-price">$4.00</span></li>
+          <li><span class="menu-item-name">Granola Bar</span><span class="menu-item-price">$1.50</span></li>
+          <li><span class="menu-item-name">Mixed Nuts</span><span class="menu-item-price">$2.00</span></li>
+          <li><span class="menu-item-name">Fruit Salad</span><span class="menu-item-price">$3.00</span></li>
+        </ul>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <button onclick="window.location.href='contact.html'" style="background: #8d5524; color: #fff; border: none; padding: 1rem 2.5rem; border-radius: 4px; font-size: 1.1rem; cursor: pointer; font-weight: 500; transition: background 0.2s;" onmouseover="this.style.background='#5c3310'" onmouseout="this.style.background='#8d5524'">Order Now</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Café Aroma. All rights reserved. | Designed by YourCompany
+  </footer>
+  <script>
+    // Show mobile menu toggle on small screens
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const mainNav = document.getElementById('main-nav');
+      if (window.innerWidth < 700) {
+        menuToggle.style.display = 'block';
+        mainNav.style.display = 'none';
+        menuToggle.addEventListener('click', function() {
+          mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+        });
+      }
+      window.addEventListener('resize', function() {
+        if (window.innerWidth < 700) {
+          menuToggle.style.display = 'block';
+          mainNav.style.display = 'none';
+        } else {
+          menuToggle.style.display = 'none';
+          mainNav.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

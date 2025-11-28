@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Café Aroma</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="script.js" defer></script>
+  <style>
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .about-img {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .about-text {
+      flex: 2 1 400px;
+    }
+    .about-list {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+    .about-list li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Café Aroma</h1>
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="menu-toggle" aria-label="Toggle navigation" style="display:none;">☰</button>
+  </header>
+  <main>
+    <section class="about-section">
+      <div class="about-img">
+        <img src="assets/images/coff1.jpg" alt="About Café" class="placeholder" style="max-width:300px;box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+      </div>
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>Café Aroma is a locally owned coffee shop dedicated to serving the freshest coffee and homemade pastries. Our team is passionate about creating a welcoming space for everyone in our community.</p>
+        <h3>Our Values</h3>
+        <ul class="about-list">
+          <li>✔ Quality ingredients</li>
+          <li>✔ Community focus</li>
+          <li>✔ Friendly service</li>
+          <li>✔ Sustainability</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h3>Why Visit Us?</h3>
+      <ul class="about-list">
+        <li>✔ Freshly brewed coffee</li>
+        <li>✔ Homemade pastries</li>
+        <li>✔ Free Wi-Fi & cozy seating</li>
+        <li>✔ Friendly local staff</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Café Aroma. All rights reserved. | Designed by YourCompany
+  </footer>
+  <script>
+    // Show mobile menu toggle on small screens
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const mainNav = document.getElementById('main-nav');
+      if (window.innerWidth < 700) {
+        menuToggle.style.display = 'block';
+        mainNav.style.display = 'none';
+        menuToggle.addEventListener('click', function() {
+          mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+        });
+      }
+      window.addEventListener('resize', function() {
+        if (window.innerWidth < 700) {
+          menuToggle.style.display = 'block';
+          mainNav.style.display = 'none';
+        } else {
+          menuToggle.style.display = 'none';
+          mainNav.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
