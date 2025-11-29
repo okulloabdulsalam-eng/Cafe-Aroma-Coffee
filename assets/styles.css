@@ -57,3 +57,68 @@ img.placeholder {
     margin: 0.5rem 0.5rem 0 0;
   }
 }
+
+
+
+
+/* Make images resize */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Stack items on small screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+
+
+
+/* ============================================
+   MOBILE HAMBURGER MENU FIX (VERY IMPORTANT)
+   ============================================ */
+
+@media (max-width: 700px) {
+
+  /* Make header layout good for small screens */
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  /* Hide nav menu initially (JS toggles it) */
+  #main-nav {
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* Make each nav link full width */
+  #main-nav a {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    font-size: 1.1rem;
+  }
+
+  /* Show hamburger menu button */
+  #menu-toggle {
+    display: block !important;
+    font-size: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+
+
